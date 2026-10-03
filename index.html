@@ -28,12 +28,12 @@
         .app-container {
             width: 100%;
             max-width: 420px;
-            background-color: #1a1b1c; /* ពណ៌ផ្ទៃខាងក្រោយងងឹត */
+            background-color: #1a1b1c; 
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            padding: 30px 20px;
+            padding: 30px 20px 20px 20px;
             position: relative;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
@@ -81,7 +81,7 @@
         }
 
         .selection-box {
-            border: 3px solid #5ab0c6; /* ពណ៌បន្ទាត់គែមខៀវ */
+            border: 3px solid #5ab0c6; 
             border-radius: 15px;
             padding: 15px 10px;
             display: grid;
@@ -99,7 +99,7 @@
         }
 
         .game-card {
-            background-color: #559db2; /* ពណ៌ផ្ទៃខាងក្នុងកាត */
+            background-color: #559db2; 
             color: #ffffff;
             width: 100%;
             height: 80px;
@@ -114,6 +114,16 @@
             box-shadow: inset 0 -2px 5px rgba(0,0,0,0.15);
         }
 
+        /* ចលនា (Animation) សម្រាប់ប៊ូតុងលោតឡើងចុះ */
+        @keyframes bounceBtn {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px); /* កម្ពស់នៃការលោតឡើង */
+            }
+        }
+
         /* ប៊ូតុងចូលមើលទម្រង់ */
         .btn-container {
             position: absolute;
@@ -124,7 +134,7 @@
         }
 
         .view-btn {
-            background: linear-gradient(to right, #e5e7eb, #9ca3af); /* ពណ៌ប្រផេះ gradient */
+            background: linear-gradient(to right, #e5e7eb, #9ca3af); 
             color: #000;
             border: 2px solid #fff;
             padding: 5px 10px;
@@ -135,16 +145,20 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.5); 
             transition: 0.2s;
             white-space: nowrap;
+            /* ដាក់ Animation ឱ្យលោតរហូត */
+            animation: bounceBtn 2s infinite ease-in-out;
         }
 
+        /* ពេលយកកណ្តុរទៅប៉ះ ឱ្យវាឈប់លោត និងរីកធំបន្តិច */
         .view-btn:hover {
+            animation-play-state: paused;
             transform: scale(1.05);
             background: linear-gradient(to right, #f3f4f6, #d1d5db);
         }
 
         /* ផ្នែកព័ត៌មានខាងក្រោម */
         .info-section {
-            margin-top: 30px;
+            margin-top: 60px; /* បន្ថែមទំហំដើម្បីរុញផ្នែកនេះឱ្យចុះមកក្រោម */
             padding-bottom: 20px;
             font-size: 14px;
             line-height: 1.6;
@@ -176,13 +190,14 @@
             margin-bottom: 2px;
         }
 
-        /* ផ្នែក Social Media និង Footer */
+        /* ផ្នែក Social Media និង Footer រុញមកក្រោមបំផុត */
         .bottom-area {
-            margin-top: auto;
+            margin-top: auto; /* រុញឱ្យនៅបាតក្រោមជានិច្ច */
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: space-between;
-            padding-top: 20px;
+            padding-top: 50px; /* បន្ថែមគម្លាតពីផ្នែកព័ត៌មានខាងលើ */
+            padding-bottom: 10px;
         }
 
         .social-icons {
@@ -194,8 +209,8 @@
             font-size: 20px;
             background-color: #fff;
             color: #000;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             display: flex;
             justify-content: center;
             align-items: center;
